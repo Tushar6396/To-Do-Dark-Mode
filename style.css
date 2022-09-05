@@ -1,0 +1,131 @@
+:root{
+    --bgcolor:black;
+    --btncolor:#333333;
+    --btntextcolor:rgb(170, 165, 165);
+    --formcolor:#191919;
+    --listcolor:#2d283e;
+    --white:white;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    transition: all 300ms;
+}
+
+body{
+    background-color: var(--bgcolor);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow-x: hidden;
+}
+
+.tdForm{
+    margin-top: 100px;
+    display: flex;
+    border: none;
+}
+
+.textArea{
+    width: 400px;
+    background-color: var(--formcolor);
+    padding: 7px 7px;
+    color:  var(--white);
+}
+.textArea::placeholder{
+    font-size: 20px;
+}
+.btn{
+    margin-left: 5px;
+    background-color: var(--btncolor);
+    color: var(--btntextcolor);
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 0px 10px;
+    letter-spacing: 1px;
+}
+
+.btn , i{
+    cursor: pointer;
+}
+
+.btn:hover , i:hover{
+    transform: scale(1.11);
+}
+
+.list-container{
+    width: 450px;
+    margin-top: 50px;
+}
+
+li{
+    position: relative;
+    display: flex;
+    width: 100%;
+    background-color: var(--listcolor);
+    align-items: center;
+    margin-bottom: 10px;
+    color: var(--white);
+}
+
+i{
+    padding: 10px 10px;
+    background-color: #2d283e;
+    color: gray;
+}
+
+i:hover{
+    background-color: gray;
+    color:black;
+}
+
+.fa-adjust{
+    margin: 20px;
+    padding: 5px;
+    border-radius: 10%;
+    position: absolute;
+    right: 10;
+}
+
+.fa-adjust:hover{
+    transform: scale(1.11);
+}
+
+.fa-adjust:hover::after{
+    left: -90;
+    opacity: 1;
+}
+
+.fa-adjust::after{
+    color: var(--white);
+    position: absolute;
+    width: 90px;
+    left:60;
+    z-index: -1;
+    transition: all 500ms;
+    opacity: 0;
+}
+
+@media (max-width: 500px){
+    .list-container{
+        width: 95vw;
+    }
+    .todo-text{
+        width: 78vw;
+    }
+}
+
+.fa-trash{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50px;
+    text-align: center;
+    cursor: pointer;
+    padding-top: 4px 4px 4px 4px;
+}
+
